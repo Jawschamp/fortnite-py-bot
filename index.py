@@ -13,7 +13,7 @@ class MyClient(fortnitepy.Client):
         super().__init__(
             email=cfg.email,
             password=cfg.password,
-            platform='cfg.platform,
+            platform=cfg.platform,
             net_cl=cfg.netcl,
             build=cfg.build,
             engine_build=cfg.enginebuild,
