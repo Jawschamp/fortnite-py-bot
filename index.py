@@ -1,7 +1,7 @@
 # IMPORTANT
 # To use this bot you must have Python 3.5 or higher
-# Run 'py -3 -m pip install fortnitepy', "py -3 -m pip install json" to install required things
-# Change the details, email, password, netcl, build, enginebuild in the __init__
+# Run 'py -3 -m pip install fortnitepy' to install required things
+# Change the details, email, password, netcl, build, enginebuild in the config.json
 import fortnitepy
 import json
 
@@ -64,22 +64,22 @@ class MyClient(fortnitepy.Client):
 
     @client.event
     async def event_friend_message(self, message):
-    args = message.content.split(" ")
+        args = message.content.split()
         if "CID_" in args[0]:
-        await set_outfit(args[0])
-        await message.reply('Skin set to ' + args[0])
+            await set_outfit(args[0])
+            await message.reply('Skin set to ' + args[0])
 
         if "BID_" in args[0]:
-        await set_backpack(args[0])
-        await message.reply('Backpack set to ' + args[0])
+            await set_backpack(args[0])
+            await message.reply('Backpack set to ' + args[0])
 
         if "EID_" in args[0]:
-        await set_emote(args[0])
-        await message.reply('Emote set to ' + args[0])
+            await set_emote(args[0])
+            await message.reply('Emote set to ' + args[0])
 
         if "Pickaxe_ID_" in args[0]:
-        await set_pickaxe(args[0])
-        await message.reply('Emote set to ' + args[0])
+            await set_pickaxe(args[0])
+            await message.reply('Emote set to ' + args[0])
 
         if args[0] == "!leave":
             await leave()
@@ -98,11 +98,9 @@ class MyClient(fortnitepy.Client):
             await message.reply('Cleared emote.')
 
         if args[0] == "!purpleskull":
-
             variants = client.user.party.me.create_variants(
             clothing_color=1
             )
-
             await client.user.party.me.set_outfit(
             asset='CID_030_Athena_Commando_M_Halloween',
             variants=variants
@@ -110,22 +108,22 @@ class MyClient(fortnitepy.Client):
 
     @client.event
     async def event_party_message(self, message):
-        args = message.content.split(" ")
+            args = message.content.split()
             if "CID_" in args[0]:
-            await set_outfit(args[0])
-            await message.reply('Skin set to ' + args[0])
+                await set_outfit(args[0])
+                await message.reply('Skin set to ' + args[0])
 
             if "BID_" in args[0]:
-            await set_backpack(args[0])
-            await message.reply('Backpack set to ' + args[0])
+                await set_backpack(args[0])
+                await message.reply('Backpack set to ' + args[0])
 
             if "EID_" in args[0]:
-            await set_emote(args[0])
-            await message.reply('Emote set to ' + args[0])
+                await set_emote(args[0])
+                await message.reply('Emote set to ' + args[0])
 
             if "Pickaxe_ID_" in args[0]:
-            await set_pickaxe(args[0])
-            await message.reply('Emote set to ' + args[0])
+                await set_pickaxe(args[0])
+                await message.reply('Emote set to ' + args[0])
 
             if args[0] == "!leave":
                 await leave()
@@ -143,11 +141,9 @@ class MyClient(fortnitepy.Client):
                 await message.reply('Cleared emote.')
 
             if args[0] == "!purpleskull":
-
                 variants = client.user.party.me.create_variants(
                 clothing_color=1
                 )
-
                 await client.user.party.me.set_outfit(
                 asset='CID_030_Athena_Commando_M_Halloween',
                 variants=variants
