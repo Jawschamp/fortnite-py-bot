@@ -59,8 +59,8 @@ class MyClient(fortnitepy.Client):
 
         # BP
         await set_battlepass_info(has_purchased=true, level=9999999999, self_boost_xp=9999999999, friend_boost_xp=9999999999)
-
-        # await invite(user_id) (Invite other bots/people to your lobby when the main bot joins.)
+        
+        await invite(user_id) (Invite other bots/people to your lobby when the main bot joins.)
 
     @client.event
     async def event_friend_message(self, message):
